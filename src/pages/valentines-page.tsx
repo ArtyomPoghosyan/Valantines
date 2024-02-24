@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { SearchOutlined } from '@ant-design/icons';
-import type { GetRef, TableColumnsType, TableColumnType } from 'antd';
-import { Button, Input, Space, Spin, Table } from 'antd';
-import type { FilterDropdownProps } from 'antd/es/table/interface';
 import Highlighter from 'react-highlight-words';
+
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
+
+import { SearchOutlined } from '@ant-design/icons';
+import { Button, Input, Space, Spin, Table } from 'antd';
+import type { TableColumnsType, TableColumnType } from 'antd';
+import type { FilterDropdownProps } from 'antd/es/table/interface';
+ 
 import { getAllDataInfoThunk, getAllInfoThunk, getDataThunk, searchDataThunk } from '../store/valantines/index';
 
 import valentinesStyle from "../pages/valentines.module.css"
@@ -166,7 +169,7 @@ export const ValentinesPage: React.FC = () => {
                 <Spin size='large' className={valentinesStyle.spin} />
             </div>
         }
-        <Table 
+        <Table
             columns={columns}
             dataSource={AllDataInfo}
             pagination={{
